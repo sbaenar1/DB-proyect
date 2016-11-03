@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Gestion_Escenario</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta http-equiv="application-name" content="Agenda Cultural">
+	<meta http-equiv="author" content="Santiago Baena Rivera">
+	<meta http-equiv="author" content="Sebastian Ramirez Lopez">
+	<meta http-equiv="author" content="David Sanchez Uribe">
+	<meta http-equiv="keywords" content="Agenda, Cultural">	
+</head>
+<body>
+	<form action="registrarEscenario.php" method="get" >
+		<fieldset>
+			<legend> Gestión Escenario</legend>
+			Nombre:<input type="text" name="nombre" maxlength="45" required>*<br>
+			Teléfono:<input type="text" name="tel_contacto" pattern="[0-9]{1,10}" title="Ingrese solo números" required>*<br>
+			Capacidad:<input type="number" name="capacidad" min="1" max="65535"> <br>
+			Dirección:<input type="text" name="direccion" maxlength="20"> <br>
+			<a href="Page.html"><button type="button">Regresar</button></a>
+			<input type="reset" value="Limpiar">
+			<input type="submit" value="Eliminar" formaction="eliminarEscenario.php"></button>
+			<input type="submit" value="Actualizar" formaction="actualizarEscenario.php"></button>
+			<input type="submit" value="Registrar"> <br>
+			<p style="font-size:70%">Los campos marcados con * son obligatorios</p>
+		</fieldset>
+	</form>	
+</body>
+</html>
