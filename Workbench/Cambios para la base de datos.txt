@@ -1,0 +1,3 @@
+Cambiar idUniversidades por bigint unsigned
+Cambiar telèfonos de contacto por bigint unsigned
+Añadir Tipo documento para representantes
