@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<title>Gestion_Universidad</title>
+	<title>Gestion_Representante</title>
 	<meta charset="UTF-8">
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<meta http-equiv="application-name" content="Agenda Cultural">
@@ -11,17 +11,18 @@
 	<meta http-equiv="keywords" content="Agenda, Cultural">	
 </head>
 <body>
-	<form action="registrarUniversidad.php" method="get" >
+	<form action="registrarRepresentante.php" method="get" >
 		<fieldset>
-			<legend> Gestión Universidad</legend>
-			Nit:<input type="text" name="idUniversidades" maxlength="10" pattern="[0-9]{1,10}" title="Ingrese solo números" required>*<br>
+			<legend> Gestión Representante</legend>
+			CC<input type="radio" name="tipoDoc" value="CC" checked>
+			Nit<input type="radio" name="tipoDoc" value="Nit">
+			<input type="text" name="idRepresentante" maxlength="10" pattern="[0-9]{1,10}" title="Ingrese solo números" required>*<br>
 			Nombre:<input type="text" name="nombre" maxlength="45" required>*<br>
-			Teléfono:<input type="text" name="tel_contacto" pattern="[0-9]{1,10}" title="Ingrese solo números" required>*<br>
-			Dirección:<input type="text" name="direccion" maxlength="20"> <br>
+			Teléfono:<input type="text" name="telefono" pattern="[0-9]{1,10}" title="Ingrese solo números" required>*<br>
 			<a href="Page.html"><button type="button">Regresar</button></a>
 			<input type="reset" value="Limpiar">
-			<input type="submit" value="Eliminar" formaction="eliminarUniversidad.php"></button>
-			<input type="submit" value="Actualizar" formaction="actualizarUniversidad.php"></button>
+			<input type="submit" value="Eliminar" formaction="eliminarRepresentante.php"></button>
+			<input type="submit" value="Actualizar" formaction="actualizarRepresentante.php"></button>
 			<input type="submit" value="Registrar"> <br>
 			<p style="font-size:70%">Los campos marcados con * son obligatorios</p>
 		</fieldset>
