@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Gestion_Evento</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta http-equiv="application-name" content="Agenda Cultural">
+	<meta http-equiv="author" content="Santiago Baena Rivera">
+	<meta http-equiv="author" content="Sebastian Ramirez Lopez">
+	<meta http-equiv="author" content="David Sanchez Uribe">
+	<meta http-equiv="keywords" content="Agenda, Cultural">	
+</head>
+<body>
+	<form action="registrarEvento.php" method="get" >
+		<fieldset>
+			<legend> Gestión Evento</legend>
+			Nombre:<input type="text" name="nombre" maxlength="45" required>*<br>
+			Hora Inicio:<input type="time" name="horaIni" required>* 
+			Hora Fin:<input type="time" name="horaFin"> <br>
+			Fecha:<input type="date" name="Fecha">* <br>
+			Tipo Evento: <input type="radio" name="tipo" value="m" checked>Música
+			<input type="radio" name="tipo" value="t">Teatro
+			<input type="radio" name="tipo" value="p">Plástica
+			<input type="radio" name="tipo" value="l">Literatura
+			<input type="radio" name="tipo" value="c">Cine*<br>
+			<textarea name="descripcion" rows="4" cols="50"></textarea><br>
+			Universidad:<select name="universidad">
+				<option value="">Traer los</option>
+				<option value="">valores de la</option>
+				<option value="">base de datos</option>
+			</select><br>
+		    Escenario:<select name="escenario">
+				<option value="">Traer los</option>
+				<option value="">valores de la</option>
+				<option value="">base de datos</option>
+			</select><br>
+			<a href="Page.html"><button type="button">Regresar</button></a>
+			<input type="reset" value="Limpiar">
+			<input type="submit" value="Eliminar" formaction="eliminarEvento.php"></button>
+			<input type="submit" value="Actualizar" formaction="actualizarEvento.php"></button>
+			<input type="submit" value="Registrar"> <br>
+			<p style="font-size:70%">Los campos marcados con * son obligatorios</p>
+		</fieldset>
+	</form>	
+</body>
+</html>

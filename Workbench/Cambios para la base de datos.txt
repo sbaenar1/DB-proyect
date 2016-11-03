@@ -2,3 +2,5 @@ Cambiar idUniversidades e idRepresentantespor bigint unsigned
 Cambiar telèfonos de contacto por bigint unsigned
 Añadir Tipo documento para representantes
 Hacer nombre del punto de venta no nulo
+Normalizar Paises en artistas
+Hacer valor no nulo en boleta

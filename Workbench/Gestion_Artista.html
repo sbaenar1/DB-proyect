@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Gestion_Artista</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta http-equiv="application-name" content="Agenda Cultural">
+	<meta http-equiv="author" content="Santiago Baena Rivera">
+	<meta http-equiv="author" content="Sebastian Ramirez Lopez">
+	<meta http-equiv="author" content="David Sanchez Uribe">
+	<meta http-equiv="keywords" content="Agenda, Cultural">	
+</head>
+<body>
+	<form action="registrarArtista.php" method="get" >
+		<fieldset>
+			<legend> Gestión Artista</legend>
+			Nombre:<input type="text" name="nombre" maxlength="45" required>*<br>
+			Tipo Artista: <input type="radio" name="tipo" value="m" checked>Música
+			<input type="radio" name="tipo" value="t">Teatro
+			<input type="radio" name="tipo" value="p">Plástica
+			<input type="radio" name="tipo" value="l">Literatura
+			<input type="radio" name="tipo" value="c">Cine*<br>
+
+			Pais:<select name="pais">
+				<option value="">Traer los</option>
+				<option value="">valores de la</option>
+				<option value="">base de datos</option>
+			</select>
+			<br>
+			Representante:<select name="representante" required>
+				<option value="">Traer los</option>
+				<option value="">valores de la</option>
+				<option value="">base de datos</option>
+			</select>
+			<br>
+			<a href="Page.html"><button type="button">Regresar</button></a>
+			<input type="reset" value="Limpiar">
+			<input type="submit" value="Eliminar" formaction="eliminarArtista.php"></button>
+			<input type="submit" value="Actualizar" formaction="actualizarArtista.php"></button>
+			<input type="submit" value="Registrar"> <br>
+			<p style="font-size:70%">Los campos marcados con * son obligatorios</p>
+		</fieldset>
+	</form>	
+</body>
+</html>
