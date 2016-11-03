@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>INFORMACION_ESCENARIO</title>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  	<meta http-equiv="application-name" content="Agenda Cultural">
+  	<meta http-equiv="author" content="Santiago Baena Rivera">
+  	<meta http-equiv="author" content="Sebastian Ramirez Lopez">
+  	<meta http-equiv="author" content="David Sanchez Uribe">
+  	<meta http-equiv="keywords" content="Agenda, Cultural">
+
+    <script type="text/javascript">
+      function click(){
+        $("#comentarios").css {("color" : "#090").
+      }
+      }
+
+    </script>
+  </head>
+  <body>
+    <form action="informacionEscenario.php" method="get">
+      <fieldset>
+        <legend>Informacion Escenario</legend>
+        <!--escenario  es el nombre del escenario -->
+        Nombre: <output type="text" name="nescenario" value="esenario"> escenario <br>
+        Telefono: <output type="text" name="ntelefono" value="telefono"> telefono <br>
+        Capacidad: <output type="text" name="capacidad" value="capacidad"> capacidad <br>
+        direccion: <output type="text" name="direccion" value="direccion"> direccion <br>
+
+
+
+        <textarea name="comentarios" rows="10" cols="40"></textarea><br>
+        <button type="button" name="eventos" value="eventos" onclick="click"> mostrar eventos</button>
+        <a href="page.html"> <button type = "button">regresar</button></a><br>
+
+      </fieldset>
+    </form>
+  </body>
+</html>

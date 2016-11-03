@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>info_evento</title>
+  	<meta charset="UTF-8">
+  	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  	<meta http-equiv="application-name" content="Agenda Cultural">
+  	<meta http-equiv="author" content="Santiago Baena Rivera">
+  	<meta http-equiv="author" content="Sebastian Ramirez Lopez">
+  	<meta http-equiv="author" content="David Sanchez Uribe">
+  	<meta http-equiv="keywords" content="Agenda, Cultural">
+  </head>
+  <body>
+    <form action="infoEvento.php" method="get" >
+      <fieldset>
+  			<legend> Informacion Evento</legend>
+  			Nombre:<output type="text" name="nombre" maxlength="45" required> el Aguila descalza<br>
+  			Hora Inicio:<output type="text" name="horaIni" required>
+  			Hora Fin:<output type="text" name="horaFin"> * <br>
+  			Fecha:<output type="date" name="Fecha"> * <br>
+  			Tipo Evento: <output type="Text" name="tipo"> teatro <br>
+  			Descrppcion: <br>
+        <textarea name="descripcion" rows="4" cols="50"></textarea><br>
+  			Universidad:<output type=text name="universidad"> eafit <br>
+  		    Escenario:<output type="text"  name="escenario"> prado</output> <br>
+  			<a href="page.html"><button type="button">Regresar</button></a>
+  			<p style="font-size:70%">Los campos marcados con * son obligatorios</p>
+  		</fieldset>
+  	</form>
+  </body>
+</html>
