@@ -1,31 +1,30 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-	<title>Gestion_Representante</title>
-	<meta charset="UTF-8">
-	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-	<meta http-equiv="application-name" content="Agenda Cultural">
-	<meta http-equiv="author" content="Santiago Baena Rivera">
-	<meta http-equiv="author" content="Sebastian Ramirez Lopez">
-	<meta http-equiv="author" content="David Sanchez Uribe">
-	<meta http-equiv="keywords" content="Agenda, Cultural">	
-</head>
-<body>
-	<form action="registrarRepresentante.php" method="get" >
-		<fieldset>
-			<legend> Gestión Representante</legend>
-			CC<input type="radio" name="tipoDoc" value="CC" checked>
-			Nit<input type="radio" name="tipoDoc" value="Nit">
-			<input type="text" name="idRepresentante" maxlength="10" pattern="[0-9]{1,10}" title="Ingrese solo números" required>*<br>
-			Nombre:<input type="text" name="nombre" maxlength="45" required>*<br>
-			Teléfono:<input type="text" name="telefono" pattern="[0-9]{1,10}" title="Ingrese solo números" required>*<br>
-			<a href="menuRegistros.html"><button type="button">Regresar</button></a>
-			<input type="reset" value="Limpiar">
-			<input type="submit" value="Eliminar" formaction="eliminarRepresentante.php"></button>
-			<input type="submit" value="Actualizar" formaction="actualizarRepresentante.php"></button>
-			<input type="submit" value="Registrar"> <br>
-			<p style="font-size:70%">Los campos marcados con * son obligatorios</p>
-		</fieldset>
-	</form>	
-</body>
-</html>
+	<!DOCTYPE html>
+	<html lang="es">
+	<head>
+		<title>Gestion_Representante</title>
+		<meta charset="UTF-8">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta http-equiv="application-name" content="Agenda Cultural">
+		<meta http-equiv="author" content="Santiago Baena Rivera">
+		<meta http-equiv="author" content="Sebastian Ramirez Lopez">
+		<meta http-equiv="author" content="David Sanchez Uribe">
+		<meta http-equiv="keywords" content="Agenda, Cultural">	
+	</head>
+	<body>
+		<form action="registrarRepresentante.php" method="get" >
+			<fieldset>
+				<legend> Gestión Representante</legend>
+				CC<input type="radio" name="tipoDoc" value="CC" checked>
+				Nit<input type="radio" name="tipoDoc" value="Nit">
+				<input type="text" name="idRepresentante" maxlength="10" pattern="[0-9]{1,10}" title="Ingrese solo números" required>*<br>
+				Nombre:<input type="text" name="nombre" maxlength="45" required>*<br>
+				Teléfono:<input type="text" name="telefono" pattern="[0-9]{1,10}" title="Ingrese solo números" required>*<br>
+				<a href="menuRegistros.html"><button type="button">Regresar</button></a>
+				<input type="reset" value="Limpiar">
+				<input type="submit" value="Eliminar" formaction="eliminarRepresentante.php"></button>
+				<input type="submit" value="Guardar"> <br>
+				<p style="font-size:70%">Los campos marcados con * son obligatorios</p>
+			</fieldset>
+		</form>	
+	</body>
+	</html>
