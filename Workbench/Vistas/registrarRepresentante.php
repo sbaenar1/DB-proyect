@@ -7,8 +7,6 @@
     $database   = "db655123386";
     $user_name  = "dbo655123386";
     $password   = "holaMundoCruel";
-
-
     $connect = mysqli_connect($host_name, $user_name, $password, $database);
     
     if(mysqli_connect_errno())
@@ -35,7 +33,6 @@
         echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
     mysqli_close($link);
 }
-
 ?>
 
 </body>
