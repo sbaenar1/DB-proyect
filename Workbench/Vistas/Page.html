@@ -1,47 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<head>
-  <!--Import Google Icon Font-->
-  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!--Import materialize.css-->
-  <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  </head>
+  <head>
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
 
-  <!--Let browser know website is optimized for mobile-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-</head>
-<body>
-  <!--Import jQuery before materialize.js-->
-  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script type="text/javascript" src="../js/materialize.min.js"></script>
-</body>
-<body>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+  <body>
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="../js/materialize.min.js"></script>
+  </body>
+  <body>
+    <nav>
+    <div class="nav-wrapper">
+      <a href="Page.html" class="brand-logo right">Agenda Cultural</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="Registro_Usuario.html">Iniciar Sesion</a></li>
+        <li><a href="Register.html">Registrarse</a></li>
+      </ul>
+    </div>
+  </nav>
+  <label>Tipo Evento</label>
+  <select class="browser-default">
+    <option value="" disabled selected>Choose your option</option>
+    <option value="1">Universidad</option>
+    <option value="2">Escenario</option>
+    <option value="3">Artista</option>
+  </select>
+  <label>Seleccionar tipo</label>
+<select class="browser-default">
+  <option value="" disabled selected>Choose your option</option>
+  <option value="1">Música</option>
+  <option value="2">Teatro</option>
+  <option value="3">Plástica</option>
+  <option value="4">Literatura</option>
+  <option value="5">Cine</option>
+</select>
+  <br>
   <nav>
-  <div class="nav-wrapper">
-    <a href="Page.html" class="brand-logo right">Agenda Cultural</a>
-    <ul id="nav-mobile" class="left hide-on-med-and-down">
-      <li><a href="Registro_Usuario.html">Iniciar Sesion</a></li>
-      <li><a href="Register.html">Registrarse</a></li>
-    </ul>
-  </div>
-</nav>
-<nav>
-  <div class="nav-wrapper">
-    <form>
-      <div class="input-field">
-        <input id="search" type="search" required>
-        <label for="search"><i class="material-icons">search</i></label>
-        <i class="material-icons">close</i>
-      </div>
-    </form>
-  </div>
-</nav>
+    <div class="nav-wrapper">
+      <form>
+        <div class="input-field">
+          <input id="search" type="search" required>
+          <label for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
+        </div>
+      </form>
+    </div>
+  </nav>
+  <br>
+  <table>
+    <thead>
+      <tr>
+          <th data-field="id">Nombre</th>
+          <th data-field="name">Descripción</th>
+          <th data-field="price">Tipo</th>
+          <th data-field="Fecha">Fecha</th>
+          <th data-field="HI">Hora Inicio</th>
+          <th data-field="HF">Hora Fin</th>
+      </tr>
+    </thead>
+    <tbody>
 
-
-    </body>
-</html>
+    </tbody>
+  </table>
+      </body>
+  </html>
