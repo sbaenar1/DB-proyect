@@ -9,10 +9,10 @@
     
     if(mysqli_connect_errno())
     {
-    echo '<p>Verbindung zum MySQL Server fehlgeschlagen: '.mysqli_connect_error().'</p>';
+    echo '<p> La conexion al servidor MySQL fallo: '.mysqli_connect_error().'</p>';
     }
     else
     {
-    echo '<p>Verbindung zum MySQL Server erfolgreich aufgebaut.</p>';
+    echo '<p> Conexion establecida con exito al servidor MySQL.</p>';
     }
 ?>
