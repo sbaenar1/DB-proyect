@@ -27,7 +27,7 @@
 						</form>
 						<form action="" method="get">
 							<fieldset>
-								<legend>Buscar Representante</legend>
+								<legend>Buscar o Eliminar Representante</legend>
 								CC<input type="radio" name="tipoDoc" value="C" checked>
 								Nit<input type="radio" name="tipoDoc" value="N">
 								<input type="text" name="idRepresentante" maxlength="10" pattern="[0-9]{1,10}" title="Ingrese solo números" required>*<br>
