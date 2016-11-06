@@ -1,7 +1,7 @@
 <?php
-    $host_name  = "db655195544.db.1and1.com";
-    $database   = "db655195544";
-    $user_name  = "dbo655195544";
+    $host_name  = "db655202258.db.1and1.com";
+    $database   = "db655202258";
+    $user_name  = "dbo655202258";
     $password   = "holaMundoCruel";
 
 
@@ -9,10 +9,10 @@
     
     if(mysqli_connect_errno())
     {
-    echo '<p> La conexion al servidor MySQL fallo: '.mysqli_connect_error().'</p>';
+    echo '<p>Verbindung zum MySQL Server fehlgeschlagen: '.mysqli_connect_error().'</p>';
     }
     else
     {
-    echo '<p> Conexion establecida con exito al servidor MySQL.</p>';
+    echo '<p>Verbindung zum MySQL Server erfolgreich aufgebaut.</p>';
     }
 ?>
