@@ -23,21 +23,21 @@
 							<input type="reset" value="Limpiar">
 							<input type="submit" name="Guardar" value="Guardar"> <br>
 							<p style="font-size:70%">Los campos marcados con * son obligatorios</p>
-							</fieldset>
-						</form>
-						<form action="" method="get">
-							<fieldset>
-								<legend>Buscar o Eliminar Representante</legend>
-								CC<input type="radio" name="tipoDoc" value="C" checked>
-								Nit<input type="radio" name="tipoDoc" value="N">
-								<input type="text" name="idRepresentante" maxlength="10" pattern="[0-9]{1,10}" title="Ingrese solo números" required>*<br>
-								<input type="reset" value="Limpiar">
-								<input type="submit" name="Eliminar" value="Eliminar">
-								<input type="submit" name="Buscar" value="Buscar"> <br>
-								<p style="font-size:70%">Los campos marcados con * son obligatorios</p>
-							</fieldset>
-						</form>
-						<script>
+						</fieldset>
+					</form>
+					<form action="" method="get">
+						<fieldset>
+							<legend>Buscar o Eliminar Representante</legend>
+							CC<input type="radio" name="tipoDoc" value="C" checked>
+							Nit<input type="radio" name="tipoDoc" value="N">
+							<input type="text" name="idRepresentante" maxlength="10" pattern="[0-9]{1,10}" title="Ingrese solo números" required>*<br>
+							<input type="reset" value="Limpiar">
+							<input type="submit" name="Eliminar" value="Eliminar">
+							<input type="submit" name="Buscar" value="Buscar"> <br>
+							<p style="font-size:70%">Los campos marcados con * son obligatorios</p>
+						</fieldset>
+					</form>
+					<script>
 						function display(nombre, tipoDoc, idRepresentante, telefono){
 							if(tipoDoc == 'C'){
 								document.getElementById("CC").checked = "checked";
@@ -48,10 +48,10 @@
 							document.getElementById("telefono").value = telefono;
 							document.getElementById("nombre").value = nombre;
 						}
-						</script>
-						<?php
-						include 'conexion.php';
-						if(isset($_GET['Guardar'])){
+					</script>
+					<?php
+					include 'conexion.php';
+					if(isset($_GET['Guardar'])){
 						$tipoDoc = $_GET['tipoDoc'];
 						$idRepresentante = $_GET['idRepresentante'];
 						$nombre = $_GET['nombre'];

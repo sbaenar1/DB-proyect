@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<title>Gestion_Universidad</title>
+	<title>Gestion_Escenario</title>
 	<meta charset="UTF-8">
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<meta http-equiv="application-name" content="Agenda Cultural">
@@ -13,11 +13,11 @@
 <body>
 	<form action="" method="get" >
 		<fieldset>
-			<legend> Gestión Universidad</legend>
-			Nit:<input type="text" name="idUniversidades" maxlength="10" pattern="[0-9]{1,10}" title="Ingrese solo números" required id="idUniversidades">*<br>
+			<legend> Gestión Escenario</legend>
 			Nombre:<input type="text" name="nombre" maxlength="45" required id="nombre">*<br>
 			Teléfono:<input type="text" name="tel_contacto" pattern="[0-9]{1,10}" title="Ingrese solo números" required id=telefono>*<br>
 			Dirección:<input type="text" name="direccion" maxlength="20" id="direccion"> <br>
+			Capacidad:<input type="number" name="capacidad" min="1" max="65535" id="capacidad"> <br>
 			<a href="menuRegistros.html"><button type="button">Regresar</button></a>
 			<input type="reset" value="Limpiar">
 			<input type="submit" name="Guardar" value="Guardar"> <br>
@@ -26,8 +26,8 @@
 	</form>
 	<form action="" method="get">
 		<fieldset>
-		<legend>Buscar o Eliminar Universidad</legend>
-		Nit:<input type="text" name="idUniversidades" maxlength="10" pattern="[0-9]{1,10}" title="Ingrese solo números" required>*<br>
+		<legend>Buscar o Eliminar Escenario</legend>
+		Nombre<input type="text" name="nombre" maxlength="45" required>*<br>
 		<input type="reset" value="Limpiar">
 		<input type="submit" name="Eliminar" value="Eliminar">
 		<input type="submit" name="Buscar" value="Buscar"> <br>
@@ -35,51 +35,50 @@
 	</fieldset>
 </form>
 <script>
-	function display(idUniversidades, nombre, telefono, direccion){
-		document.getElementById("idUniversidades").value = idUniversidades;
+	function display(capacidad, nombre, telefono, direccion){
+		document.getElementById("capacidad").value = capacidad;
 		document.getElementById("nombre").value = nombre;
 		document.getElementById("telefono").value = telefono;
 		document.getElementById("direccion").value = direccion;
-
 	}
 </script>
 <?php
 include 'conexion.php';
 if(isset($_GET['Guardar'])){
-	$idUniversidades = $_GET['idUniversidades'];
+	$capacidad = $_GET['capacidad'];
 	$nombre = $_GET['nombre'];
 	$tel_contacto = $_GET['tel_contacto'];
 	$direccion = $_GET['direccion'];
 	$sql = "CALL insertarTelefono('$tel_contacto', '$direccion')";
 	mysqli_query($connect, $sql);
 
-	$sql = "INSERT INTO Universidades (idUniversidades, nombre, Informacion_Contacto_Telefono) 
-	VALUES ('$idUniversidades', '$nombre', '$tel_contacto') 
-	ON DUPLICATE KEY UPDATE nombre = '$nombre', Informacion_Contacto_Telefono = '$tel_contacto'";
+	$sql = "INSERT INTO Escenarios (capacidad, nombre, Informacion_Contacto_Telefono) 
+	VALUES ('$capacidad', '$nombre', '$tel_contacto') 
+	ON DUPLICATE KEY UPDATE capacidad = '$capacidad', Informacion_Contacto_Telefono = '$tel_contacto'";
 	if(mysqli_query($connect, $sql)){
 		echo "Records added successfully.";
 	} else{
-		echo "El telefono pertenece a otra universidad";
+		echo "El telefono pertenece a otro Escenario";
 		echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
 	}
 }
 if(isset($_GET['Buscar'])){
-	$idUniversidades = $_GET['idUniversidades'];
-	$sql = "SELECT nombre, Informacion_Contacto_Telefono, Direccion 
-	FROM (Universidades INNER JOIN Informacion_Contacto 
-	ON Universidades.Informacion_Contacto_Telefono = Informacion_Contacto.telefono)
-	WHERE idUniversidades = '$idUniversidades'";
+	$nombre = $_GET['nombre'];
+	$sql = "SELECT Capacidad, Informacion_Contacto_Telefono, Direccion 
+	FROM (Escenarios INNER JOIN Informacion_Contacto 
+	ON Escenarios.Informacion_Contacto_Telefono = Informacion_Contacto.telefono)
+	WHERE nombre = '$nombre'";
 	$result = mysqli_query($connect, $sql);
 	if (mysqli_num_rows($result) > 0) {
 		$row = mysqli_fetch_assoc($result);
-		echo "<script> display(" . $idUniversidades . ",'" . $row["nombre"] . "', " . $row["Informacion_Contacto_Telefono"] . ",'" . $row["Direccion"] . "'); </script>";
+		echo "<script> display(" . $row["Capacidad"] . ",'" . $nombre . "', " . $row["Informacion_Contacto_Telefono"] . ",'" . $row["Direccion"] . "'); </script>";
 	} else {
 		echo "Registro no encontrado";
 	}
 }
 if(isset($_GET['Eliminar'])){
-	$idUniversidades = $_GET['idUniversidades'];
-	$sql = "DELETE FROM Universidades WHERE idUniversidades = '$idUniversidades'";
+	$nombre = $_GET['nombre'];
+	$sql = "DELETE FROM Escenarios WHERE nombre = '$nombre'";
 	if (mysqli_query($connect, $sql)) {
 		echo "Record deleted successfully";
 	} else {
