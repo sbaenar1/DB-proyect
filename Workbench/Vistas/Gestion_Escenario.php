@@ -13,7 +13,7 @@
 <body>
 	<form action="" method="get" >
 		<fieldset>
-			<legend> Gestión Escenario</legend>
+			<legend> Crear o Actualizar Escenario</legend>
 			Nombre:<input type="text" name="nombre" maxlength="45" required id="nombre">*<br>
 			Teléfono:<input type="text" name="tel_contacto" pattern="[0-9]{1,10}" title="Ingrese solo números" required id=telefono>*<br>
 			Dirección:<input type="text" name="direccion" maxlength="20" id="direccion"> <br>
