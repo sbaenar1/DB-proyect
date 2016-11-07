@@ -53,7 +53,7 @@
 	</form>
 	<form action="" method="get">
 		<fieldset>
-		<legend>Buscar o Eliminar Evento</legend>
+			<legend>Buscar o Eliminar Evento</legend>
 			Nombre: <input type="text" name="nombre" maxlength="45" required>*<br>
 			<input type="reset" value="Limpiar">
 			<input type="submit" name="Eliminar" value="Eliminar">
@@ -75,59 +75,59 @@
 		//display('Concierto','20:00','22:00','1983-02-09', 't', 'Hola Mundo', 'Universidad del Tolima', 'Auditorio Fundadores');
 	</script>
 </form>	
-			<?php
-			include 'conexion.php';
-			if(isset($_GET['Guardar'])){
-				$nombre = $_GET['nombre'];
-				$horaIni = $_GET['horaIni'];
-				$horaFin = $_GET['horaFin'];
-				$fecha = $_GET['fecha'];
-				$tipo = $_GET['tipo'];
-				$descripcion = $_GET['descripcion'];
-				$universidad = $_GET['universidad'];		
-				$escenario = $_GET['escenario'];
+<?php
+include 'conexion.php';
+if(isset($_GET['Guardar'])){
+	$nombre = $_GET['nombre'];
+	$horaIni = $_GET['horaIni'];
+	$horaFin = $_GET['horaFin'];
+	$fecha = $_GET['fecha'];
+	$tipo = $_GET['tipo'];
+	$descripcion = $_GET['descripcion'];
+	$universidad = $_GET['universidad'];		
+	$escenario = $_GET['escenario'];
 
-				$sql = "INSERT INTO Eventos (nombre, horaInicio, horaFinalizacion, fecha, 
-				Tipo_Artista_Evento_Tipo, descripcion, Universidades_idUniversidades, Escenarios_idEscenarios) 
-				VALUES ('$nombre', '$horaIni' , '$horaFin', '$fecha', '$tipo', '$descripcion', '$universidad', '$escenario')
-				ON DUPLICATE KEY UPDATE horaInicio = '$horaIni', horaFinalizacion = '$horaFin', 
-				fecha ='$fecha', Tipo_Artista_Evento_Tipo ='$tipo', descripcion ='$descripcion', Universidades_idUniversidades ='$universidad', Escenarios_idEscenarios = '$escenario'";
-				if(mysqli_query($connect, $sql)){
-					echo "Records added successfully.";
-				} else{
-					echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+	$sql = "INSERT INTO Eventos (nombre, horaInicio, horaFinalizacion, fecha, 
+	Tipo_Artista_Evento_Tipo, descripcion, Universidades_idUniversidades, Escenarios_idEscenarios) 
+	VALUES ('$nombre', '$horaIni' , '$horaFin', '$fecha', '$tipo', '$descripcion', '$universidad', '$escenario')
+	ON DUPLICATE KEY UPDATE horaInicio = '$horaIni', horaFinalizacion = '$horaFin', 
+	fecha ='$fecha', Tipo_Artista_Evento_Tipo ='$tipo', descripcion ='$descripcion', Universidades_idUniversidades ='$universidad', Escenarios_idEscenarios = '$escenario'";
+	if(mysqli_query($connect, $sql)){
+		echo "Records added successfully.";
+	} else{
+		echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
 
-				} 
-			}
-			if(isset($_GET['Buscar'])){
-				$nombre = $_GET['nombre'];
-				$sql = "SELECT horaInicio, horaFinalizacion, fecha, 
-				Tipo_Artista_Evento_Tipo, descripcion, Universidades_idUniversidades, Escenarios_idEscenarios 
-				FROM Eventos WHERE nombre = '$nombre'";			
-				$result = mysqli_query($connect, $sql);
-				if (mysqli_num_rows($result) > 0) {
-					$row = mysqli_fetch_assoc($result);
-					echo "<script> display('" . $nombre . "', '" . $row["horaInicio"] . "', '" . $row["horaFinalizacion"] . "','" 
-					. $row["fecha"] . "', '" . $row["Tipo_Artista_Evento_Tipo"]  . "','" . $row["descripcion"] . "', '" 
-					. $row["Universidades_idUniversidades"] . "','" . $row["Escenarios_idEscenarios"]  . "'); </script>";
-				} else {
-					echo "Registro no encontrado";
-				}
+	} 
+}
+if(isset($_GET['Buscar'])){
+	$nombre = $_GET['nombre'];
+	$sql = "SELECT horaInicio, horaFinalizacion, fecha, 
+	Tipo_Artista_Evento_Tipo, descripcion, Universidades_idUniversidades, Escenarios_idEscenarios 
+	FROM Eventos WHERE nombre = '$nombre'";			
+	$result = mysqli_query($connect, $sql);
+	if (mysqli_num_rows($result) > 0) {
+		$row = mysqli_fetch_assoc($result);
+		echo "<script> display('" . $nombre . "', '" . $row["horaInicio"] . "', '" . $row["horaFinalizacion"] . "','" 
+		. $row["fecha"] . "', '" . $row["Tipo_Artista_Evento_Tipo"]  . "','" . $row["descripcion"] . "', '" 
+		. $row["Universidades_idUniversidades"] . "','" . $row["Escenarios_idEscenarios"]  . "'); </script>";
+	} else {
+		echo "Registro no encontrado";
+	}
 
-			}
-			
-			if(isset($_GET['Eliminar'])){
-				$nombre = $_GET['nombre'];
-				$sql = "DELETE FROM Eventos WHERE nombre = '$nombre'";
-				if (mysqli_query($connect, $sql)) {
-					echo "Record deleted successfully";
-				} else {
-					echo "Error deleting record: " . mysqli_error($conn);
-				}
-			}
+}
 
-			mysqli_close($link);
-			?>
+if(isset($_GET['Eliminar'])){
+	$nombre = $_GET['nombre'];
+	$sql = "DELETE FROM Eventos WHERE nombre = '$nombre'";
+	if (mysqli_query($connect, $sql)) {
+		echo "Record deleted successfully";
+	} else {
+		echo "Error deleting record: " . mysqli_error($conn);
+	}
+}
+
+mysqli_close($link);
+?>
 
 </body>
 </html>
