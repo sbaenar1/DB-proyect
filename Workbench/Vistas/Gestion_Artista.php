@@ -13,7 +13,7 @@
 		<body>
 			<form action="" method="get" >
 				<fieldset>
-					<legend> Gestión Artista</legend>
+					<legend> Crear o Actualizar Artista</legend>
 					Nombre:<input type="text" name="nombre" maxlength="45" required id="nombre">*<br>
 					Tipo Artista: <input type="radio" name="tipo" value="m" checked id="m">Música
 					<input type="radio" name="tipo" value="t" id="t">Teatro
@@ -28,8 +28,7 @@
 						echo "<option value='" . $row['idPaises'] . "'>" . $row['Nombre'] . "</option>";
 					} 
 					echo '</select>';
-					?>
-					<br>
+					?><br>
 
 					<?php
 					include 'conexion.php';
