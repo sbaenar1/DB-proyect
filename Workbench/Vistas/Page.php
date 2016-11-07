@@ -16,11 +16,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
   <body>
+      <form action="" method="get">
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="../js/materialize.min.js"></script>
-  </body>
-  <body>
     <nav>
     <div class="nav-wrapper">
       <a href="Page.html" class="brand-logo right">Agenda Cultural</a>
@@ -33,18 +32,13 @@
   <label>Tipo Evento</label>
   <select class="browser-default">
     <option value="" disabled selected>Choose your option</option>
-    <option value="1">Universidad</option>
-    <option value="2">Escenario</option>
-    <option value="3">Artista</option>
-  </select>
-  <label>Seleccionar tipo</label>
-<select class="browser-default">
-  <option value="" disabled selected>Choose your option</option>
-  <option value="1">Música</option>
-  <option value="2">Teatro</option>
-  <option value="3">Plástica</option>
-  <option value="4">Literatura</option>
-  <option value="5">Cine</option>
+    <option value="universidad" name="lista">Universidad</option>
+    <option value="escenario" name="lista">Escenario</option>
+    <option value="artista" name="lista">Artista</option>
+    <option value="teatro" name="lista">Teatro</option>
+    <option value="plastica" name="lista">Plástica</option>
+    <option value="literatura" name="lista">Literatura</option>
+    <option value="cine" name="lista">Cine</option>
 </select>
   <br>
   <nav>
@@ -74,5 +68,42 @@
 
     </tbody>
   </table>
+  <script>
+  function getTypes(lista){
+    if(lista == 'universidad'){
+      document.getElementById("lista").value = universidad;
+    }else if (lista == 'escenario') {
+      document.getElementById("lista").value = escenario;
+    }else if (lista == 'artista') {
+      document.getElementById("lista").value = artista;
+    }else if (lista == 'teatro') {
+      document.getElementById("lista").value = teatro;
+    }else if (lista == 'plastica') {
+      document.getElementById("lista").value = plastica;
+    } else if (lista == 'literatura') {
+      document.getElementById("lista").value = literatura;
+    }else {
+      document.getElementById("lista").value = cine;
+    }
+  }
+  </script>
+</form>
+  <?php
+  
+  include 'conexion.php';
+  if(isset($_GET['search'])){
+    $T_event = $_GET['lista'];
+    $sql = "select nombre, descripcion, tipo, fecha, horaInicio, horaFinalizacion
+    FROM Eventos WHERE nombre = 'search'";
+    if (mysqli_query($connect, $sql)) {
+      echo "Record deleted successfully";
+    } else {
+      echo "Error deleting record: " . mysqli_error($conn);
+    }
+  }
+
+  mysqli_close($link);
+  ?>
+
       </body>
   </html>
