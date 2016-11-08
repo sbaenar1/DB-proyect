@@ -16,7 +16,7 @@
 					<legend> RegistroUsuario</legend>
 					Usuario:<input type="text" name="usuario" maxlength="45" required id="usuario">*<br>
 					Contraseña:<input type="password" name="contrasena" maxlength="45" required id="contrasena">*<br>
-					<a href="Page.html"><button type="button">Regresar</button></a>
+					<a href="Page2.php"><button type="button">Regresar</button></a>
 					<input type="reset" value="Limpiar">
 					<input type="submit" name="Continuar" value="Continuar"> <br>
 					<p style="font-size:70%">Los campos marcados con * son obligatorios</p>

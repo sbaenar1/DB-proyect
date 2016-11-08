@@ -13,6 +13,6 @@
     }
     else
     {
-    echo '<p>Verbindung zum MySQL Server erfolgreich aufgebaut.</p>';
+    //echo '<p>Verbindung zum MySQL Server erfolgreich aufgebaut.</p>';
     }
 ?>
