@@ -93,6 +93,7 @@ if(isset($_GET['Buscar'])){
 	'artista' . $artista = substr($_GET['artista'], 1);
 	$sql = sprintf("SELECT Tipo_Artista_Evento.Nombre AS nombreTi, Escenarios.nombre AS nombreEs, Universidades.nombre AS nombreUn, Eventos.nombre AS nombreEv, horaInicio, horaFinalizacion, descripcion,fecha, Eventos.Escenarios_idEscenarios, Eventos.Universidades_idUniversidades, Participacion.Artistas_idArtistas, Eventos.Tipo_Artista_Evento_Tipo, BoletasDisponibles FROM Eventos, Participacion, Universidades, Escenarios, Tipo_Artista_Evento
 		WHERE Eventos.nombre LIKE '$nombre' OR fecha = '$fecha' OR Eventos.Escenarios_idEscenarios = '$escenario' OR Eventos.Universidades_idUniversidades = '$universidad' OR Participacion.Artistas_idArtistas = '$artista' OR Eventos.Tipo_Artista_Evento_Tipo = '$tipo' GROUP BY Eventos.nombre");
+	echo $sql;
 	$get = mysqli_query($connect, $sql);
 	echo "<table border='1'>
 	<tr>
@@ -117,7 +118,7 @@ if(isset($_GET['Buscar'])){
 		echo "<td>" . $row['fecha'] . "</td>";
 		echo "<td>" . $row['descripcion'] . "</td>";
 		echo "<td>" . $row['nombreEs'] . "</td>";
-		echo "<td>" . $row['nombreTi'] . "</td>";
+		echo "<td>" . $row['Tipo_Artista_Evento_Tipo'] . "</td>";
 		echo "<td>" . $row['nombreUn'] . "</td>";
 		echo "<td>" . $row['BoletasDisponibles'] . "</td>";
 		echo "</tr>";
